@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitaciones Digitales - Servicio de Invitaciones Personalizadas</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos básicos para las secciones y pestañas */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden; 
+             
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        .nav-tab {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .nav-tab:hover {
+            background-color: #555;
+        }
+        .nav-tab-slider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #ff5722;
+            transition: transform 0.3s;
+        }
+        .slider {
+            display: none;
+            padding: 20px;
+        }
+        .slider.active {
+            display: block;
+        }
+
+        /* Estilos para el fondo de partículas */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Para asegurarse de que las partículas estén detrás del contenido */
+        }
+
+        /* Estilo para el footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer .footer-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        footer .footer-images img {
+            margin: 10px;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        footer .footer-images img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilos para la galería de invitaciones */
+        .invitaciones-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            background-color: #070707;
+        }
+        .invitaciones-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .invitaciones-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+<section class="nav">
+    <h1>Invitaciones Digitales</h1>
+    <h3 class="span loader">
+        <span class="m">C</span>
+        <span class="m">R</span>
+        <span class="m">E</span>
+        <span class="m">A</span>
+        <span class="m">M</span>
+        <span class="m">O</span>
+        <span class="m">S</span>
+        <span class="m">&nbsp;</span>
+        <span class="m">I</span>
+        <span class="m">N</span>
+        <span class="m">V</span>
+        <span class="m">I</span>
+        <span class="m">T</span>
+        <span class="m">A</span>
+        <span class="m">C</span>
+        <span class="m">I</span>
+        <span class="m">O</span>
+        <span class="m">N</span>
+        <span class="m">E</span>
+        <span class="m">S</span>
+    </h3>
+    <div class="nav-container">
+        <a class="nav-tab" href="#tab-services">Nuestros Servicios</a>
+        <a class="nav-tab" href="#tab-prices">Precios</a>
+        <a class="nav-tab" href="#tab-testimonials">Testimonios</a>
+        <a class="nav-tab" href="#tab-contact">Contáctanos</a>
+        <span class="nav-tab-slider"></span>
+    </div>
+</section>
+
+<main class="main">
+    <section id="tab-services" class="slider">
+        <h1>Servicios</h1>
+        <h2>Ofrecemos invitaciones digitales personalizadas para bodas, cumpleaños y cualquier ocasión especial. Elige entre nuestros diseños modernos o crea uno desde cero. ¡Haz que tus invitados se queden impresionados!</h2>
+        
+        <!-- Nueva sección con imágenes debajo de "Creemos Invitaciones" -->
+        <div class="gallery">
+            <div class="image-container">
+              <img src="https://www.fiftysounds.com/images/graphics/vintage-background-geometric-triangles-purple-turquoise-3421.jpg" alt="Imagen Grande" class="image-large">
+            </div>
+            <div class="image-container">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ahDa47UKAdbWEwXRKZHzXwZ_UuvzMv8896yka7T2s_P5IlPSgsGVNJ4LiesJA0o_9E8&usqp=CAU" alt="Imagen Pequeña" class="image-small">
+            </div>
+            <div class="image-container">
+              <img src="https://img.freepik.com/vector-gratis/fondo-formas-poligonales-geometricas-degradado_23-2148790012.jpg" alt="Imagen Grande" class="image-large">
+            </div>
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ahDa47UKAdbWEwXRKZHzXwZ_UuvzMv8896yka7T2s_P5IlPSgsGVNJ4LiesJA0o_9E8&usqp=CAU" alt="Imagen Pequeña" class="image-small">
+              </div>
+              <div class="image-container">
+                <img src="https://img.freepik.com/vector-gratis/fondo-formas-poligonales-geometricas-degradado_23-2148790012.jpg" alt="Imagen Grande" class="image-large">
+              </div>
+              <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ahDa47UKAdbWEwXRKZHzXwZ_UuvzMv8896yka7T2s_P5IlPSgsGVNJ4LiesJA0o_9E8&usqp=CAU" alt="Imagen Pequeña" class="image-small">
+              </div>
+              <div class="image-container">
+                <img src="https://img.freepik.com/vector-gratis/fondo-formas-poligonales-geometricas-degradado_23-2148790012.jpg" alt="Imagen Grande" class="image-large">
+              </div>
+            
+    </section>
+
+    <section id="tab-prices" class="slider">
+        <h1>Precios</h1>
+        <h2>Elige el paquete que mejor se adapte a tus necesidades. Todos nuestros paquetes incluyen diseños personalizados y la opción de animación interactiva.</h2>
+        <ul>
+            <li><strong>Paquete Básico:</strong> Incluye un diseño estándar y envío digital. Precio: $50</li>
+            <li><strong>Paquete Avanzado:</strong> Incluye diseño personalizado y animaciones. Precio: $100</li>
+            <li><strong>Paquete Premium:</strong> Diseño exclusivo, animaciones interactivas y una versión personalizada para cada invitado. Precio: $150</li>
+        </ul>
+    </section>
+
+    <section id="tab-testimonials" class="slider">
+        <h1>Testimonios</h1>
+        <h2>Lo que dicen nuestros clientes felices:</h2>
+        <blockquote>
+            "¡Las invitaciones digitales para nuestra boda fueron un éxito! Los diseños son hermosos y fue fácil enviarlas a nuestros invitados." - Laura y Felipe
+        </blockquote>
+        <blockquote>
+            "El servicio fue increíble. Nos ayudaron a crear una invitación única que reflejó nuestra personalidad. ¡Altamente recomendados!" - Camila y Juan
+        </blockquote>
+    </section>
+    <section id="tab-contact" class="slider">
+        <h1>Contáctanos</h1>
+        <h2>¿Tienes alguna duda o quieres comenzar con tu invitación digital? Contáctanos hoy mismo.</h2>
+        <a href="mailto:info@invitacionesdigitales.com" class="btn">Enviar Correo</a>
+        <p>También puedes llamarnos al: <strong>(+123) 456-7890</strong></p>
+    </section>
+</main>
+
+<!-- Footer con imágenes estilo "vento" -->
+<footer>
+    <p>&copy; 2025 Invitaciones Digitales. Todos los derechos reservados.</p>
+    <div class="footer-images">
+        <img src="https://www.google.com/imgres?q=fondos&imgurl=https%3A%2F%2Fwallpapers.com%2Fimages%2Ffeatured%2Ffondos-interactivos-h1gpt4b9f4k8q0ts.jpg&imgrefurl=https%3A%2F%2Fes.wallpapers.com%2Ffondos-interactivos&docid=v3IB_VLI3sQzgM&tbnid=T27AUGCIUtW8YM&vet=12ahUKEwitqJTvzq-LAxVQSTABHRmqLxwQM3oECEYQAA..i&w=900&h=675&hcb=2&ved=2ahUKEwitqJTvzq-LAxVQSTABHRmqLxwQM3oECEYQAA" alt="Imagen 1">
+        <img src="https://via.placeholder.com/120" alt="Imagen 2">
+        <img src="https://via.placeholder.com/120" alt="Imagen 3">
+        <img src="https://via.placeholder.com/120" alt="Imagen 4">
+    </div>
+</footer>
+
+<canvas class="background"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<script>
+    // Código para el funcionamiento de las pestañas
+    const tabs = document.querySelectorAll('.nav-tab');
+    const sliders = document.querySelectorAll('.slider');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Eliminar la clase activa de todas las secciones
+            sliders.forEach(slider => {
+                slider.classList.remove('active');
+            });
+
+            // Mostrar la sección correspondiente
+            const target = document.querySelector(tab.getAttribute('href'));
+            target.classList.add('active');
+
+            // Desplazar la barra de navegación
+            const sliderPosition = tab.offsetLeft;
+            document.querySelector('.nav-tab-slider').style.transform = `translateX(${sliderPosition}px)`;
+        });
+    });
+
+    // Inicializa mostrando la primera sección
+    document.querySelector('.nav-tab').click();
+
+    // Inicialización de las partículas
+    Particles.init({
+        selector: '.background',
+        color: ['#ff5722', '#e91e63', '#9c27b0'],
+        connectParticles: true,
+        maxParticles: 150,
+        sizeVariations: 3,
+        speed: 0.5,
+        responsive: [
+            {
+                breakpoint: 768,
+                options: {
+                    color: ['#ff5722', '#e91e63'],
+                    maxParticles: 60,
+                    connectParticles: false
+                }
+            }
+        ]
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

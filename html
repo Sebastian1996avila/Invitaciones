@@ -12,15 +12,17 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            overflow-x: hidden; 
-             
+            overflow-x: hidden;
         }
+        
         .nav-container {
             display: flex;
             justify-content: center;
             background-color: #333;
             padding: 10px;
+            flex-wrap: wrap; /* Permite que las pestañas se acomoden en varias filas en pantallas pequeñas */
         }
+
         .nav-tab {
             color: white;
             text-decoration: none;
@@ -28,9 +30,11 @@
             margin: 0 10px;
             cursor: pointer;
         }
+
         .nav-tab:hover {
             background-color: #555;
         }
+
         .nav-tab-slider {
             position: absolute;
             bottom: 0;
@@ -40,6 +44,7 @@
             background-color: #91a9ec;
             transition: transform 0.3s;
         }
+
         .slider {
             display: none;
             padding: 20px;
@@ -53,8 +58,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw; /* Utiliza el 100% del ancho de la ventana */
+            height: 100vh; /* Utiliza el 100% de la altura de la ventana */
             z-index: -1; /* Para asegurarse de que las partículas estén detrás del contenido */
         }
 
@@ -66,12 +71,14 @@
             padding: 20px;
             margin-top: 40px;
         }
+
         footer .footer-images {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 20px;
         }
+
         footer .footer-images img {
             margin: 10px;
             width: 120px;
@@ -80,34 +87,58 @@
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
+
         footer .footer-images img:hover {
             transform: scale(1.1);
+        }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            footer .footer-images img {
+                width: 80px; /* Imágenes más pequeñas en pantallas móviles */
+                height: 80px;
+            }
         }
 
         /* Estilos para la galería de invitaciones */
         .invitaciones-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px 20px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 2fr)); /* Grid responsivo */
+            gap: 10px;
+            padding: 30px 10px;
             background-color: #070707;
         }
+
         .invitaciones-gallery img {
             width: 100%;
-            height: 100%;
+            height: auto; /* Para que las imágenes mantengan sus proporciones */
             object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .invitaciones-gallery img:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
+        
+       
+
     </style>
 </head>
 <body>
 
+    <section class="carousel">
+        <button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>
+        <div class="carousel-container">
+            <img src="https://static.vecteezy.com/system/resources/previews/009/462/105/non_2x/abstract-horizontal-background-gradient-waves-of-different-sizes-curved-lines-or-stripes-of-papier-mache-in-delicate-shades-smooth-curves-vector.jpg" alt="Imagen 1" class="carousel-image">
+            <img src="https://cdn.pixabay.com/photo/2016/03/15/02/42/floor-1256804_1280.jpg" alt="Imagen 2" class="carousel-image">
+            <img src="https://www.santanderassetmanagement.es/wp-content/uploads/2021/01/Fondo-Luxemburgo.jpg" alt="Imagen 3" class="carousel-image">
+        </div>
+        <button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>
+    </section>
+    
 <section class="nav">
     <h1>Invitaciones Digitales</h1>
     <h3 class="span loader">
@@ -146,10 +177,10 @@
         <h1>Servicios</h1>
         <h2>Ofrecemos invitaciones digitales personalizadas para bodas, cumpleaños y cualquier ocasión especial. Elige entre nuestros diseños modernos o crea uno desde cero. ¡Haz que tus invitados se queden impresionados!</h2>
         
-        <!-- Nueva sección con imágenes debajo de "Creemos Invitaciones" -->
-        <div class="gallery">
+        <!-- Galería de imágenes debajo de "Creemos Invitaciones" -->
+        <div class="invitaciones-gallery">
             <div class="image-container">
-              <img src="https://www.fiftysounds.com/images/graphics/vintage-background-geometric-triangles-purple-turquoise-3421.jpg" alt="Imagen Grande" class="image-large">
+              <img src="https://c4.wallpaperflare.com/wallpaper/691/170/464/fondos-de-pantalla-color-azul-abstract-wallpaper-preview.jpg" alt="Imagen Grande" class="image-large">
             </div>
             <div class="image-container">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ahDa47UKAdbWEwXRKZHzXwZ_UuvzMv8896yka7T2s_P5IlPSgsGVNJ4LiesJA0o_9E8&usqp=CAU" alt="Imagen Pequeña" class="image-small">
@@ -159,42 +190,197 @@
             </div>
             <div class="image-container">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ahDa47UKAdbWEwXRKZHzXwZ_UuvzMv8896yka7T2s_P5IlPSgsGVNJ4LiesJA0o_9E8&usqp=CAU" alt="Imagen Pequeña" class="image-small">
-              </div>
-              <div class="image-container">
+            </div>
+            <div class="image-container">
                 <img src="https://img.freepik.com/vector-gratis/fondo-formas-poligonales-geometricas-degradado_23-2148790012.jpg" alt="Imagen Grande" class="image-large">
-              </div>
-              <div class="image-container">
+            </div>
+            <div class="image-container">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ahDa47UKAdbWEwXRKZHzXwZ_UuvzMv8896yka7T2s_P5IlPSgsGVNJ4LiesJA0o_9E8&usqp=CAU" alt="Imagen Pequeña" class="image-small">
-              </div>
-                        
+            </div>
+        </div>
     </section>
 
-    <section id="tab-prices" class="slider">
-        <h1>Precios</h1>
-        <h2>Elige el paquete que mejor se adapte a tus necesidades. Todos nuestros paquetes incluyen diseños personalizados y la opción de animación interactiva.</h2>
-        <ul>
-            <li><strong>Paquete Básico:</strong> Incluye un diseño estándar y envío digital. Precio: $50</li>
-            <li><strong>Paquete Avanzado:</strong> Incluye diseño personalizado y animaciones. Precio: $100</li>
-            <li><strong>Paquete Premium:</strong> Diseño exclusivo, animaciones interactivas y una versión personalizada para cada invitado. Precio: $150</li>
-        </ul>
+    <section id="tab-prices" class="slider" style="background-color: #f3f4f9; padding: 80px 20px; border-top: 3px solid #91a9ec;">
+        <h1 style="text-align: center; font-size: 3rem; color: #3a3a3a;">Nuestros Paquetes</h1>
+        <h2 style="text-align: center; font-size: 1.5rem; color: #555; margin-bottom: 40px;">Elige el paquete que mejor se adapte a tus necesidades. Todos nuestros paquetes incluyen diseños personalizados y opciones de animación interactiva para sorprender a tus invitados.</h2>
+    
+        <div class="price-cards-container" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <!-- Paquete Básico -->
+            <div class="price-card" style="width: 300px; padding: 30px; background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease-in-out;">
+                <img src="https://img.icons8.com/ios/452/star.png" alt="Paquete Básico" style="width: 50px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.8rem; color: #3a3a3a; margin-bottom: 15px;">Paquete Básico</h3>
+                <p style="color: #777; font-size: 1rem; margin-bottom: 20px;">Incluye un diseño estándar y envío digital.</p>
+                <h4 style="font-size: 2rem; color: #ff5722; margin-bottom: 20px;">$50</h4>
+                <ul style="list-style: none; padding: 0; font-size: 1rem; color: #555;">
+                    <li>🌟 Diseño estándar</li>
+                    <li>📩 Envío digital</li>
+                </ul>
+                <button style="margin-top: 20px; padding: 10px 20px; background-color: #ff5722; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                    Elegir
+                </button>
+            </div>
+    
+            <!-- Paquete Avanzado -->
+            <div class="price-card" style="width: 300px; padding: 30px; background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease-in-out;">
+                <img src="https://img.icons8.com/ios/452/custom-logo.png" alt="Paquete Avanzado" style="width: 50px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.8rem; color: #3a3a3a; margin-bottom: 15px;">Paquete Avanzado</h3>
+                <p style="color: #777; font-size: 1rem; margin-bottom: 20px;">Incluye diseño personalizado y animaciones interactivas.</p>
+                <h4 style="font-size: 2rem; color: #4caf50; margin-bottom: 20px;">$100</h4>
+                <ul style="list-style: none; padding: 0; font-size: 1rem; color: #555;">
+                    <li>🎨 Diseño personalizado</li>
+                    <li>🎬 Animaciones interactivas</li>
+                    <li>📩 Envío digital</li>
+                </ul>
+                <button style="margin-top: 20px; padding: 10px 20px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                    Elegir
+                </button>
+            </div>
+    
+            <!-- Paquete Premium -->
+            <div class="price-card" style="width: 300px; padding: 30px; background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease-in-out;">
+                <img src="https://img.icons8.com/ios/452/crown.png" alt="Paquete Premium" style="width: 50px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.8rem; color: #3a3a3a; margin-bottom: 15px;">Paquete Premium</h3>
+                <p style="color: #777; font-size: 1rem; margin-bottom: 20px;">Diseño exclusivo, animaciones interactivas y versión personalizada para cada invitado.</p>
+                <h4 style="font-size: 2rem; color: #f44336; margin-bottom: 20px;">$150</h4>
+                <ul style="list-style: none; padding: 0; font-size: 1rem; color: #555;">
+                    <li>💎 Diseño exclusivo</li>
+                    <li>🎬 Animaciones interactivas</li>
+                    <li>🎉 Versión personalizada para cada invitado</li>
+                    <li>📩 Envío digital</li>
+                </ul>
+                <button style="margin-top: 20px; padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                    Elegir
+                </button>
+            </div>
+        </div>
+    
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="font-size: 1.1rem; color: #555;">Si tienes alguna duda o deseas más detalles, no dudes en <a href="#tab-contact" style="color: #ff5722; font-weight: bold;">contactarnos</a>.</p>
+        </div>
+    </section>
+    
+    <style>
+        /* Hover effect for price cards */
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        .price-card button:hover {
+            background-color: #e64a19;
+        }
+    </style>
+    
+
+    <section id="tab-testimonials" class="slider" style="background-color: #f9f9f9; padding: 80px 20px; border-top: 3px solid #91a9ec;">
+        <h1 style="text-align: center; font-size: 3rem; color: #3a3a3a;">Testimonios</h1>
+        <h2 style="text-align: center; font-size: 1.5rem; color: #555; margin-bottom: 40px;">Lo que dicen nuestros clientes felices:</h2>
+    
+        <div class="testimonials-container" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <!-- Testimonio 1 -->
+            <div class="testimonial-card" style="width: 300px; padding: 30px; background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease-in-out;">
+                <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="Laura y Felipe" style="width: 70px; height: 70px; border-radius: 50%; margin-bottom: 20px;">
+                <blockquote style="font-size: 1.2rem; font-style: italic; color: #555; margin-bottom: 20px;">"¡Las invitaciones digitales para nuestra boda fueron un éxito! Los diseños son hermosos y fue fácil enviarlas a nuestros invitados."</blockquote>
+                <p style="font-size: 1.1rem; color: #3a3a3a; font-weight: bold;">Laura y Felipe</p>
+            </div>
+    
+            <!-- Testimonio 2 -->
+            <div class="testimonial-card" style="width: 300px; padding: 30px; background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease-in-out;">
+                <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Camila y Juan" style="width: 70px; height: 70px; border-radius: 50%; margin-bottom: 20px;">
+                <blockquote style="font-size: 1.2rem; font-style: italic; color: #555; margin-bottom: 20px;">"El servicio fue increíble. Nos ayudaron a crear una invitación única que reflejó nuestra personalidad. ¡Altamente recomendados!"</blockquote>
+                <p style="font-size: 1.1rem; color: #3a3a3a; font-weight: bold;">Camila y Juan</p>
+            </div>
+    
+            <!-- Testimonio 3 -->
+            <div class="testimonial-card" style="width: 300px; padding: 30px; background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease-in-out;">
+                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Carla y Roberto" style="width: 70px; height: 70px; border-radius: 50%; margin-bottom: 20px;">
+                <blockquote style="font-size: 1.2rem; font-style: italic; color: #555; margin-bottom: 20px;">"¡Increíble! La invitación que nos diseñaron fue más allá de lo que imaginamos, ¡y nos encantó cómo quedó!"</blockquote>
+                <p style="font-size: 1.1rem; color: #3a3a3a; font-weight: bold;">Carla y Roberto</p>
+            </div>
+        </div>
+    
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="font-size: 1.1rem; color: #555;">¿Tú también quieres dejar tu testimonio? ¡Contáctanos hoy mismo!</p>
+            <a href="#tab-contact" style="color: #ff5722; font-weight: bold; font-size: 1.2rem;">Contáctanos aquí</a>
+        </div>
+    </section>
+    
+    <style>
+        /* Hover effect for testimonial cards */
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        .testimonial-card blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+    
+        .testimonial-card:hover blockquote {
+            color: #ff5722;
+        }
+    
+        .testimonial-card img {
+            border: 3px solid #ff5722;
+        }
+    </style>
+    
     </section>
 
-    <section id="tab-testimonials" class="slider">
-        <h1>Testimonios</h1>
-        <h2>Lo que dicen nuestros clientes felices:</h2>
-        <blockquote>
-            "¡Las invitaciones digitales para nuestra boda fueron un éxito! Los diseños son hermosos y fue fácil enviarlas a nuestros invitados." - Laura y Felipe
-        </blockquote>
-        <blockquote>
-            "El servicio fue increíble. Nos ayudaron a crear una invitación única que reflejó nuestra personalidad. ¡Altamente recomendados!" - Camila y Juan
-        </blockquote>
+    <section id="tab-contact" class="slider" style="background-color: #070707; color: #ffffff; padding: 80px 20px; text-align: center;">
+        <h1 style="font-size: 3rem; margin-bottom: 20px; color: #91a9ec;">Contáctanos</h1>
+        <h2 style="font-size: 1.5rem; color: #dddddd; margin-bottom: 40px;">¿Tienes alguna duda o quieres comenzar con tu invitación digital? ¡Contáctanos hoy mismo!</h2>
+    
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 40px;">
+            <!-- Correo -->
+            <div class="contact-card" style="background-color: #1e1e1e; padding: 30px 40px; border-radius: 15px; width: 280px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); text-align: center; transition: transform 0.3s ease;">
+                <i class="fa fa-envelope" style="font-size: 3rem; color: #ff5722; margin-bottom: 20px;"></i>
+                <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 10px;">Enviar Correo</h3>
+                <a href="mailto:info@invitacionesdigitales.com" style="background-color: #ff5722; color: white; padding: 12px 25px; font-size: 1.2rem; border-radius: 8px; text-decoration: none; display: inline-block; transition: background-color 0.3s;">
+                    Enviar Correo
+                </a>
+            </div>
+    
+            <!-- Teléfono -->
+            <div class="contact-card" style="background-color: #1e1e1e; padding: 30px 40px; border-radius: 15px; width: 280px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); text-align: center; transition: transform 0.3s ease;">
+                <i class="fa fa-phone" style="font-size: 3rem; color: #ff5722; margin-bottom: 20px;"></i>
+                <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 10px;">Llámanos</h3>
+                <p style="font-size: 1.2rem; color: #ddd; margin-bottom: 20px;">(+123) 456-7890</p>
+                <a href="tel:+1234567890" style="background-color: #ff5722; color: white; padding: 12px 25px; font-size: 1.2rem; border-radius: 8px; text-decoration: none; display: inline-block; transition: background-color 0.3s;">
+                    Llamar
+                </a>
+            </div>
+        </div>
+    
+        <p style="font-size: 1.1rem; color: #dddddd;">Si tienes alguna duda o quieres empezar tu invitación personalizada, ¡no dudes en contactarnos! Estaremos encantados de ayudarte.</p>
     </section>
-    <section id="tab-contact" class="slider">
-        <h1>Contáctanos</h1>
-        <h2>¿Tienes alguna duda o quieres comenzar con tu invitación digital? Contáctanos hoy mismo.</h2>
-        <a href="mailto:info@invitacionesdigitales.com" class="btn">Enviar Correo</a>
-        <p>También puedes llamarnos al: <strong>(+123) 456-7890</strong></p>
-    </section>
+    
+    <style>
+        /* Efecto de hover para las tarjetas de contacto */
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+    
+        /* Estilo para los íconos de correo y teléfono */
+        .fa {
+            transition: transform 0.3s;
+        }
+    
+        .contact-card:hover .fa {
+            transform: scale(1.2);
+        }
+    
+        /* Estilo para los botones */
+        .contact-card a:hover {
+            background-color: #e64a19;
+        }
+    </style>
+    
 </main>
 
 <!-- Footer con imágenes estilo "vento" -->
@@ -223,11 +409,22 @@
     </div>
 </footer>
 
-
 <canvas class="background"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+    // Función para mover el carrusel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-image');
+    const totalSlides = slides.length;
 
+    function moveCarousel(direction) {
+        currentSlide += direction;
+        if (currentSlide < 0) currentSlide = totalSlides - 1;
+        if (currentSlide >= totalSlides) currentSlide = 0;
+        document.querySelector('.carousel-container').style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+</script>
 <script>
     // Código para el funcionamiento de las pestañas
     const tabs = document.querySelectorAll('.nav-tab');
@@ -249,6 +446,9 @@
             // Desplazar la barra de navegación
             const sliderPosition = tab.offsetLeft;
             document.querySelector('.nav-tab-slider').style.transform = `translateX(${sliderPosition}px)`;
+         
+               
+       
         });
     });
 

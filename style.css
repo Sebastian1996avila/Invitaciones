@@ -22,7 +22,7 @@ body {
   align-items: center;
   height: 100vh;
   position: relative;
-  background-color: #faf3e0; /* Beige claro */
+  background-color: #0a0a0a; /* Beige claro */
   text-align: center;
   padding: 0 2em;
 }
@@ -341,7 +341,7 @@ footer .footer-images img {
 .carousel {
   position: relative;
   overflow: hidden;
-  height: 300px; /* Ajusta la altura según sea necesario */
+  height: 150px; /* Ajusta la altura según sea necesario */
 }
 
 .carousel-container {

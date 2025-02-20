@@ -123,12 +123,14 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
         
-       
+        .divider {
+            border-top: 1px solid #f7f7f7; /* Línea horizontal */
+            margin: 10px 0;  /* Espaciado arriba y abajo */
+        }
 
     </style>
 </head>
 <body>
-
     <section class="carousel">
         <button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>
         <div class="carousel-container">
@@ -138,7 +140,7 @@
         </div>
         <button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>
     </section>
-    
+
 <section class="nav">
     <h1>Invitaciones Digitales</h1>
     <h3 class="span loader">
@@ -163,6 +165,9 @@
         <span class="m">E</span>
         <span class="m">S</span>
     </h3>
+    
+
+
     <div class="nav-container">
         <a class="nav-tab" href="#tab-services">Nuestros Servicios</a>
         <a class="nav-tab" href="#tab-prices">Precios</a>
@@ -172,6 +177,7 @@
     </div>
 </section>
 
+<div class="divider"></div>
 <main class="main">
     <section id="tab-services" class="slider">
         <h1>Servicios</h1>
@@ -413,17 +419,17 @@
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 <script>
-    // Función para mover el carrusel
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-image');
-    const totalSlides = slides.length;
+// Función para mover el carrusel
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-image');
+const totalSlides = slides.length;
 
-    function moveCarousel(direction) {
-        currentSlide += direction;
-        if (currentSlide < 0) currentSlide = totalSlides - 1;
-        if (currentSlide >= totalSlides) currentSlide = 0;
-        document.querySelector('.carousel-container').style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
+function moveCarousel(direction) {
+    currentSlide += direction;
+    if (currentSlide < 0) currentSlide = totalSlides - 1;
+    if (currentSlide >= totalSlides) currentSlide = 0;
+    document.querySelector('.carousel-container').style.transform = `translateX(-${currentSlide * 100}%)`;
+}
 </script>
 <script>
     // Código para el funcionamiento de las pestañas
